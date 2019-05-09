@@ -1,0 +1,10 @@
+import re
+r = re.compile(r'^([+]36|00\s36)\s([237]0|31)\s\d{3}\s\d{4}')
+print(r.match('+36 20 473 2746'))
+print(r.match('+36 30 217 4912'))
+print(r.match('00 36 70 381 1288'))
+print(r.match('00 36 31 471 2818'))
+print(r.match('+36 20 3173 4717'))
+print(r.match('+36 102 237 1121'))
+print(r.match('+49 20 483 1273'))
+print(r.match('36 70 381 2183'))
