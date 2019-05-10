@@ -2,7 +2,7 @@ def add(x, y):
     n1 = len(x)
     n2 = len(x[0])
     #result = [[0,0,0], [0,0,0], [0,0,0]]
-    result = []
+    result = [[0] * len(x[0]) for i in range(len(x))]
 
     for i in range(n1):
 
