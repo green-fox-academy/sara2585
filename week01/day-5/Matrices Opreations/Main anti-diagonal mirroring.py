@@ -5,6 +5,9 @@ def main_anti_dia_mirror(x):
     m = len(x[0])
     for i in range(n):
         for j in range(m):
-            result[i][j] = x[n-1-i][m-1-j]
+            if (j + i) != (m-1):
+               result[i][j] = x[n-1-i][m-1-j]
+            else: 
+                result[i][j] = x[i][j]
     return result
 print(main_anti_dia_mirror(x))
