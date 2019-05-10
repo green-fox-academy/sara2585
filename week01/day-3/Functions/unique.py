@@ -7,13 +7,16 @@
 def unique(arr):
 
     n = len(arr)
+    
     for i in range(n-2):
-        for j in range(i+1,n-1):
-            
+        for j in range(i,n-2):
+            if arr[i] == arr[j+1]:
+                arr.remove(arr[j+1])
+                n = n - 1
+                i = i - 1
 
-            if arr[i] == arr[j]:
-                arr.remove(arr[j])
-                n = n-1
+                
+                
     return arr
 
 
