@@ -1,5 +1,4 @@
 x = [[3,2,3], [11,1,6], [3, 4, 4]]
-#result = [[0,0,0], [0,0,0], [0,0,0]]
 def trans(x):
     result = [[0] * len(x[0]) for i in range(len(x))]
     for i in range(len(x)):
