@@ -23,9 +23,9 @@ class Farm():
         self.animals.remove(min_hungry)
         return self.animals
 
-farm = Farm()
-farm.breed()
-print(farm.animals)
-farm.slaughter()
-print(farm.animals)
+#farm = Farm()
+#farm.breed()
+#print(farm.animals)
+#farm.slaughter()
+#print(farm.animals)
             
