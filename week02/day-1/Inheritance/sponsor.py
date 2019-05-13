@@ -1,6 +1,6 @@
 from person import Person
 class Sponsor(Person):
-    def __init__(self, name, age, gender, company, hired_students):
+    def __init__(self, name = "Jane Doe", age = 30, gender= "female", company= "Google", hired_students = 0):
         Person.__init__(self, name, age, gender)
         self.company = company
         self.hired_students = hired_students
@@ -15,7 +15,8 @@ class Sponsor(Person):
     def get_goal(self):
         print("Hire brilliant junior software developers.")
 
-sponsor = Sponsor("Jane Doe", 30, "female", "Google", 0)
-sponsor.introduce()
-print(sponsor.hire())
-sponsor.get_goal()
+#sponsor = Sponsor("Jane Doe", 30, "female", "Google", 0)
+#sponsor = Sponsor()
+#sponsor.introduce()
+#print(sponsor.hire())
+#sponsor.get_goal()

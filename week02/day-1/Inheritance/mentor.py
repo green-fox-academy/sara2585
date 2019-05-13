@@ -1,6 +1,6 @@
 from person import Person
 class Mentor(Person):
-    def __init__(self, name, age, gender, level):
+    def __init__(self, name ="Jane Doe", age = 30, gender = "female", level = "intermediate"):
         Person.__init__(self, name, age, gender)
         self.level = level
     def get_goal(self):
@@ -9,8 +9,8 @@ class Mentor(Person):
     def introduce(self):
         print(f"Hi, I'm {self.name}, a {self.age} year old {self.gender} {self.level} mentor.")
 
-mentor = Mentor("Jane Doe", 30, "female", "intermediate")
-mentor.get_goal()
-mentor.introduce()
+#mentor = Mentor("Jane Doe", 30, "female", "intermediate")
+#mentor.get_goal()
+#mentor.introduce()
 
 

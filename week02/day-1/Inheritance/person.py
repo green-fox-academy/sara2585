@@ -1,5 +1,5 @@
 class Person():
-    def __init__(self, name, age, gender):
+    def __init__(self, name= "Jane Doe", age = 30, gender = "female"):
         self.name = name
         self.age = age
         self.gender = gender
@@ -10,5 +10,5 @@ class Person():
     def get_goal(self):
         print(f"My goal is: Live for the moument!")
 
-Jane = Person("Jane Doe", 30,"female")
-Jane.introduce()
+#Jane = Person("Jane Doe", 30,"female")
+#Jane.introduce()
