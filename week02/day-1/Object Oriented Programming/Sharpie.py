@@ -7,7 +7,7 @@ class Sharpie():
         self.ink_amount -= 2
         return self.ink_amount
 
-sharpie = Sharpie("white", 50.0)
-sharpie_use = sharpie.use()
-print(f"{sharpie_use}")
+#sharpie = Sharpie("white", 50.0)
+#sharpie_use = sharpie.use()
+#print(f"{sharpie_use}")
         
