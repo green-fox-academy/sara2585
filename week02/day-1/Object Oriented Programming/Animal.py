@@ -16,13 +16,13 @@ class Animal():
         self.thirst += 1
         return self.hunger, self.thirst
 
-tiger = Animal(10, 20)
+#tiger = Animal(10, 20)
 
-tiger_eat = tiger.eat()
-tiger_drink = tiger.drink()
-tiger_play = tiger.play()
+#tiger_eat = tiger.eat()
+#tiger_drink = tiger.drink()
+#tiger_play = tiger.play()
 
-print(f"{tiger_eat}")
-print(f"{tiger_drink}")
-print(f"{tiger_play}")
+#print(f"{tiger_eat}")
+#print(f"{tiger_drink}")
+#print(f"{tiger_play}")
 
