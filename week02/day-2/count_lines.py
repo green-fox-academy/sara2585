@@ -9,9 +9,11 @@ def count_lines(file_name):
        contents = f.readlines()
        count = 0
        count = len(contents)
+       f.close()
        return count
     except FileNotFoundError:
         return 0
-    
+    except PermissionError:
+        return 0
 file = count_lines("my-file.txt")
 print(file)
