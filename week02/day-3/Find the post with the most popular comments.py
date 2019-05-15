@@ -30,15 +30,9 @@ def find_most_polular_comments(json_contents):
             print(i)
 
 
-
-        
-                
-
-
-    #print(popular)
 f = open("C:\\Users\\Sara_Yu\\Desktop\\Sara\\greenfox\\sara_repo\\week02\\day-3\\posts.json", 'r')
 json_contents = json.load(f)
 f.close()
 find_most_polular_comments(json_contents)        
-        
+
 
