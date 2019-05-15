@@ -12,7 +12,7 @@ contents = f.read()
 
 def catch_IP(contents):
     r = re.compile(r"[\d]{2}\.[\d]{2,3}\.[\d]{2}\.[\d]{2}")
-    f = open("C:\\Users\\Sara_Yu\\Desktop\\Sara\\log.txt", "r")
+  #  f = open("C:\\Users\\Sara_Yu\\Desktop\\Sara\\log.txt", "r")
     contents = f.read()
     return r.findall(contents)
 
