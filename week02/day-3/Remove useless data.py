@@ -17,7 +17,7 @@ def remove_useless_data(contents):
         contents.remove(i)
             
 
-f = open("C:\\Users\\Sara_Yu\\Desktop\\Sara\\greenfox\\sara_repo\\week02\\day-3\\election.csv", 'r')
+f = open("election.csv", 'r')
 contents = list(csv.reader(f))
 remove_useless_data(contents)
 f.close()

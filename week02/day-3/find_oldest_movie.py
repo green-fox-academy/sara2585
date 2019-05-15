@@ -14,7 +14,7 @@ def find_oldest_movie(csv_contents):
             min = i  
     print(min)
 
-f = open("C:\\Users\\Sara_Yu\\Desktop\\Sara\\greenfox\\sara_repo\\week02\\day-3\\movies.csv", "r")
+f = open("movies.csv", "r")
 contents = list(csv.reader(f))
 find_oldest_movie(contents)
 f.close()
