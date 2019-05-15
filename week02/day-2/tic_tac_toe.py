@@ -46,29 +46,22 @@ def tic_tac_result(filename):
             return "X"
     return "Draw"
 
-print(tic_tac_result("C:\\Users\\Sara_Yu\\Desktop\\Sara\\win-X.txt"))
+#print(tic_tac_result("C:\\Users\\Sara_Yu\\Desktop\\Sara\\win-X.txt"))
 
 
-        
-
-
-    
-
-
-
-#print(tic_tac_result("win-o.txt"))
+print(tic_tac_result("win-o.txt"))
 
 # Should print "O"
 
 
 
-#print(tic_tac_result("win-x.txt"))
+print(tic_tac_result("win-x.txt"))
 
 # Should print "X"
 
 
 
 #
-# print(tic_tac_result("draw.txt"))
+print(tic_tac_result("draw.txt"))
 
 # Should print "Draw"

@@ -18,4 +18,4 @@ def write_multiple_lines(path, word, num):
         print("Cannot write the file")
 
 
-write_multiple_lines("C:\\Users\\Sara_Yu\\Desktop\\Sara\\greenfox\\sara_repo\\week02\\day-2\\my-file.txt", "Sara", 3)
+write_multiple_lines("my-file.txt", "Sara", 3)

@@ -5,20 +5,11 @@
 import re
 r = re.compile(r"[\d]{2}\.[\d]{2,3}\.[\d]{2}\.[\d]{2}")
 
-
-f = open("C:\\Users\\Sara_Yu\\Desktop\\Sara\\log.txt", "r")
-contents = f.read()
-#print(contents)
-
 def catch_IP(contents):
     r = re.compile(r"[\d]{2}\.[\d]{2,3}\.[\d]{2}\.[\d]{2}")
   #  f = open("C:\\Users\\Sara_Yu\\Desktop\\Sara\\log.txt", "r")
-    contents = f.read()
+    #contents = f.read()
     return r.findall(contents)
-
-
-
-print(catch_IP(contents))
 
 def catch_request(contents):
     r = re.compile(r"POST")
@@ -27,6 +18,11 @@ def catch_request(contents):
     return f"the ratio for GET is {g/(g+p)}, the ratio for POST is {p/(g+p)}"
     
 
+f = open("log.txt", "r")
+contents = f.read()
+#print(contents)
+f.close()
+print(catch_IP(contents))
 print(catch_request(contents))
     
 

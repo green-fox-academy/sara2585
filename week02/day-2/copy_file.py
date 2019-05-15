@@ -18,7 +18,7 @@ def copy_file(copyfromfile,copytofile):
     except PermissionError:
         return False
 
-print(copy_file("C:\\Users\\Sara_Yu\\Desktop\\Sara\\sara test.txt", "C:\\Users\\Sara_Yu\\Desktop\\Sara\\write.txt"))
+print(copy_file("sara test.txt", "write.txt"))
     
 
         
