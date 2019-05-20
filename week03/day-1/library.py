@@ -1,7 +1,5 @@
 from collections import Counter
 
-
-
 class Book:
     def __init__(self, author, title, year):
         self.author = author
@@ -13,7 +11,6 @@ class Book:
 class Bookshelf:
     def __init__(self, booklist = []):
         self.booklist = booklist
-    
         self.booklist.append(Book("Douglas Adams", "The Hitchhiker's Guide to the Galaxy", "1979"))
         self.booklist.append(Book("Marcel Proust", "In Search of Lost Time", "1913"))
 
@@ -29,6 +26,7 @@ class Bookshelf:
             authorlist.append(i.author)
         res = Counter(authorlist)
         return f"The favourite author is: {res.most_common(1)}"
+
     def earliestPublished(self):
         bookyear = {}
         for i in self.booklist:
@@ -51,11 +49,8 @@ class Bookshelf:
         bookcount = len(self.booklist)
         return(f"The number of books: {bookcount}\n{self.favouriteAuthor()}\n{self.earliestPublished()}\n{self.latestPublished()}")
         
-
-     
+    
 bookshelf = Bookshelf()
-
-
 bookshelf.addBooks(Book("Marcel Proust", "Sara test title", "2019"))     
 print(bookshelf.favouriteAuthor()) 
 print(bookshelf.earliestPublished())

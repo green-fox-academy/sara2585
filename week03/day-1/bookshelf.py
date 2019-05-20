@@ -9,7 +9,6 @@ class Hardcoverbook:
     def toString(self):
         return f"Author: {self.author}\ntitle: {self.title}\nYear: {self.releaseyear}"
 
-
 class Paperbackbook:
     def __init__(self, title, author, releaseyear, pagenum):
         self.title = title
@@ -20,8 +19,6 @@ class Paperbackbook:
 
     def toString(self):
         return f"Author: {self.author}\ntitle: {self.title}\nYear: {self.releaseyear}"
-
-
 
 class Bookshelf:
     def __init__(self, bookshelf=[]):

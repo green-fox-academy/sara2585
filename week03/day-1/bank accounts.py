@@ -1,30 +1,30 @@
 class Currency:
     def __init__(self, code, bank, value):
+        pass
+
+class USADollar(Currency):
+    def __init__(self, value, code = "USD", bank = "Federal Reserve System"):
         self.code = code
         self.bank = bank
         self.value = value
 
-class USADollar(Currency):
-    def __init__(self, value, code = "USD", bank = "Federal Reserve System"):
-        Currency.__init__(self, code, bank, value)
-
-
 class HungarianForint(Currency):
     def __init__(self, value, code = "HUF", bank = "Hungarian National Bank"):
-        Currency.__init__(self, code, bank, value)
-        
+        self.code = code
+        self.bank = bank
+        self.value = value
 
 class BankAccount:
-    def __init__(self, name, pin, Currency ):
+    def __init__(self, name, pin, currency ):
         self.name = name
         self.pin = pin
-        self.Currency = Currency
+        self.currency = currency
     def deposit(self, value):
         if value > 0:
-            self.Currency.value += value
+            self.currency.value += value
     def withdraw(self, pin, amount):
-        if pin == self.pin and amount <= self.Currency.value:
-            self.Currency.value -= amount
+        if pin == self.pin and amount <= self.currency.value:
+            self.cCurrency.value -= amount
             return amount
         else:
             return 0
@@ -33,18 +33,15 @@ class Bank:
     def __init__(self, bankaccountlist=[]):
         self.bankaccountlist = bankaccountlist
 
-    def createAccount(self, BankAccount):
-        self.bankaccountlist.append(BankAccount)
+    def createAccount(self, bankaccount):
+        self.bankaccountlist.append(bankaccount)
 
     def getAllMoney(self):
         sum = 0
         for i in self.bankaccountlist:
-            sum += i.Currency.value
+            sum += i.currency.value
         return f"The sum of all account money is: {sum}"
     
-
-    
-
 USD = USADollar(500)
 bankaccount1 = BankAccount("Sara", "010", USD)
 bankaccount1.deposit(100)
