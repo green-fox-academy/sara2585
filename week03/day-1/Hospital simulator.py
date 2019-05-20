@@ -16,23 +16,23 @@ class Queue:
     def __init__(self, patients = []):
         self.patients = patients
     
-    def addPatient(self, Patient):
-        self.patients.append(Patient)
+    def addPatient(self, patient):
+        self.patients.append(patient)
 
     def theNextPatient(self):
 
         pass
 
 class Hospital:
-    def __init__(self, Queue):
-        self.Queue = Queue
+    def __init__(self, queue):
+        self.queue = queue
 
-    def addPatient(self, Patient):
-        self.Queue.addPatient(Patient)
+    def addPatient(self, patient):
+        self.queue.addPatient(patient)
 
     def treatNextPatient(self):
-        nextSeverity = self.Queue.theNextPatient()
-        for i in self.Queue:
+        nextSeverity = self.queue.theNextPatient()
+        for i in self.queue:
             if i.severity == nextSeverity:
                 i.TreatPatient()
 
