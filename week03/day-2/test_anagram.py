@@ -4,15 +4,15 @@ import unittest
 class testAnagram(unittest.TestCase):
     def test_is_anagram(self):
         anagram = Anagram()
-        self.assertEqual(anagram.is_Anagram("abc", "bca"), True)
+        self.assertTrue(anagram.is_Anagram("abc", "bca"))
 
     def test_isnot_anagram01(self):
         anagram = Anagram()
-        self.assertEqual(anagram.is_Anagram("abc", "bcca"), False)
+        self.assertFalse(anagram.is_Anagram("abc", "bcca"))
 
     def test_is_anagram_with_oneparameter(self):
         anagram = Anagram()
-        self.assertEqual(anagram.is_Anagram("", "bcca"), False)
+        self.assertFalse(anagram.is_Anagram("", "bcca"))
 
     def tearDown(self):
         print("is done")
