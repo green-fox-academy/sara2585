@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hello {{name}}</title>
+    <title>{{title}}</title>
+    <style>
+    .picstyle{
+        font-size:20px;
+        margin: 20px auto;
+        text-align: center;
+        font-weight: bold;
+    
+    }
+    .textstyle{
+        font-size: 15px;
+        margin: 10px auto;
+        text-align:center;
+    }
+    </style>
 </head>
 <body>
-    
+    <div class="picstyle">{{title}}</div>
+    <div align="center"><img src={{pic}} width="200" height="200" auto/></div>
+    <div class="textstyle">{{description}}</div>
 </body>
 </html>
