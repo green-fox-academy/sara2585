@@ -51,7 +51,6 @@ class SafeQueue(Queue):
             return None
         else:
             nextseverity = max(severity.values())
-            return nextseverity
             for key in severity:
                 if severity[key] == nextseverity:
                     return key
@@ -84,7 +83,12 @@ queue.addPatient(patient1)
 queue.addPatient(patient2)
 queue.theNextPatient()
 
+patient3 = Patient("Tom")
 
+hospital = Hospital(queue)
+hospital.addPatient(patient3)
+for i in hospital.queue.patients:
+    print(i.name)
 
         
       
