@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Posts</title>
+    <style>
+        
+    body {
+    background-color: hsl(213, 100%, 75%);
+    color: hsl(222, 53%, 19%);
+    }
+
+    a {
+    color: hsl(0, 0%, 17%);
+    opacity: .75;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 3px;
+    }
+
+    a:hover {
+    opacity: 1;
+    background-color: hsl(0, 0%, 80%);
+    }
+    </style>
+</head>
+<body>
+    <h1>Posts</h1>
+    {% for post in posts %}
+    {% if post["liked_by"]|length == 2 %}
+    <article>
+    <h1 id="p{{post['id']}}">{{post['author']|capitalize()}}#{{post['id']}} <a href="#p{{post['id']}}">¶</a></h1>
+    <p>{{post['content']}}</p>
+    <p>Liked by {{post['liked_by'][0]|capitalize()}}, {{post['liked_by'][1]|capitalize()}}</p>
+    </article>
+
+    {% elif post["liked_by"]|length == 1 %}
+    <article>
+    <h1 id="p{{post['id']}}">{{post['author']|capitalize()}}#{{post['id']}} <a href="#p{{post['id']}}">¶</a></h1>
+    <p>{{post['content']}}</p>
+    <p>Liked by {{post['liked_by'][0]|capitalize()}}</p>
+    </article>
+    {% elif post["liked_by"]|length == 0 %}
+    <article>
+    <h1 id="p{{post['id']}}">{{post['author']|capitalize()}}#{{post['id']}} <a href="#p{{post['id']}}">¶</a></h1>
+    <p>{{post['content']}}</p>
+    </article>
+    {% endif %}
+    {% endfor %}
+</body>
+</html>
