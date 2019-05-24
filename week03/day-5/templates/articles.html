@@ -1,12 +1,16 @@
+{% extends "base.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% block head %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Articles</title>
+    <title>{% block title %}Articles{% endblock %}</title>
+    {% endblock %}
 </head>
 <body>
+    {% block content %}
     {% for article in articles %}
     <p>{{article["content"]}}</p>
     {% if article["seen"]|length == 3 %}
@@ -19,5 +23,6 @@
     <p>No one has seen this article before. </p>
     {% endif %}
     {% endfor %}
+    {% endblock %}
 </body>
 </html>

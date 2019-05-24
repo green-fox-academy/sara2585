@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+<!-- <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Posts</title>
+<head> -->
+    {% block head %}
+    <!-- <meta charset="UTF-8"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>{% block title %}Posts{% endblock %}</title>
     <style>
+    
         
     body {
     background-color: hsl(213, 100%, 75%);
-    color: hsl(222, 53%, 19%);
+    color: hsl(222, 30%, 40%);
     }
 
     a {
@@ -25,8 +28,10 @@
     background-color: hsl(0, 0%, 80%);
     }
     </style>
-</head>
-<body>
+    {% endblock %}
+<!-- </head>
+<body> -->
+    {% block content %}
     <h1>Posts</h1>
     {% for post in posts %}
     {% if post["liked_by"]|length == 2 %}
@@ -49,5 +54,6 @@
     </article>
     {% endif %}
     {% endfor %}
-</body>
-</html>
+    {% endblock %}
+<!-- </body>
+</html> -->

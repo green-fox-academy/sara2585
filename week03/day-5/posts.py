@@ -39,8 +39,6 @@ posts = [
 ]
 
 
-
-
 @app.route("/posts")
 def list_posts():
     transformed_posts = []
