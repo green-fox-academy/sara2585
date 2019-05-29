@@ -100,7 +100,7 @@ group by first_name
 ORDER BY count DESC 
 LIMIT 1
 '''
-cursor.execute(query1)
+cursor.execute(query2)
 print(f'the most common first name among the younger is: {cursor.fetchall()}')
 
 
