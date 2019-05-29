@@ -50,7 +50,8 @@ def count_avg_age():
     return avg_age
 
 
-
+cursor.close()
+con.close()
 
 
 
