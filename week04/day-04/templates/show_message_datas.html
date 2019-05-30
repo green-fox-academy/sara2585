@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Reactions{% endblock %}</title>
+    <style type="text/css">
+      .qgg-table{
+          border-collapse: collapse;
+          width:100%;
+          border:1px solid #c6c6c6 !important;
+          margin-bottom:15px;
+      }
+      .qgg-table th{
+          border-collapse: collapse;
+          border-right:1px solid #c6c6c6 !important;
+          border-bottom:1px solid #c6c6c6 !important;
+          background-color:#ddeeff !important; 
+          padding:5px 9px;
+          font-size:15px;
+          font-weight:600;
+          text-align:center;
+      }
+      .qgg-table td{
+          border-collapse: collapse;
+          border-right:1px solid #c6c6c6 !important;
+          border-bottom:1px solid #c6c6c6 !important; 
+          padding:5px 9px;
+          font-size:15px;
+          font-weight:normal;
+          text-align:center;
+          word-break: break-all;
+      }
+      .qgg-table tr:nth-child(odd){
+          background-color:#fff !important; 
+      }
+      .qgg-table tr:nth-child(even){
+          background-color: #f8f8f8 !important;
+      }
+      .questions{
+        text-align: center;
+        font-size: 25px;
+        margin: 20px auto;
+        font-weight:bold; 
+      }
+      </style>
+  
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    
+
+      <div class="questions">Which message got the most reactions in the thanks channel?</div>
+      <table class="qgg-table">
+        <tr>
+          <th>#</th>
+          <th>MESSAGE_ID</th>
+          <th>REACTION_TIMES</th>
+          <th>MESSAGE</th>
+        </tr>
+        {% for message in messages %}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{message[0]}}</td>
+          <td>{{message[1]}}</td>
+          <td>{{message[2]}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      <div class="questions">Which day sent the most messages?</div>
+      <table class="qgg-table">
+        <tr>
+          <th>#</th>
+          <th>DATE</th>
+          <th>MESSAGES</th>
+        </tr>
+        {% for message in messages_by_date %}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{message[0]}}</td>
+          <td>{{message[1]}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+
+    {% endblock %}
+</body>
+</html>

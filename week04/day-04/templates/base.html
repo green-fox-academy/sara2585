@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}Document</title>
+    {% endblock %}
+    <style>
+
+    .sarastyle1{
+        background-color:  #8ec2bb;
+        height: 70px;
+        line-height: 70px;
+        font-size: 20px;
+        text-align: center;
+        background-image: url("./static/logo.png");
+        background-size: 6%;
+        background-position: left;
+        background-repeat: no-repeat;
+    }
+    .linktext{
+        color:rgb(231, 17, 142);
+        font-weight:bold; 
+        padding-right: 10px;
+        /* text-decoration:underline; */
+        text-align: right;
+    }
+    .questions{
+        text-align: center;
+        font-size: 25px;
+        margin: 20px auto;
+        font-weight:bold; 
+      }
+      .titlestyle{
+        text-align: center;
+        font-size: 25px;
+        margin: 20px auto;
+        font-weight:bold;
+        color:  #8ec2bb; 
+      }
+    </style>
+    
+</head>
+<body>       
+        <div class="sarastyle1">
+                <span class="linktext"><a href="/home">Home</a></span>
+                <span class="linktext"><a href="/reactions">Reactions</a></span>
+                <span class="linktext"><a href="/users">Users</a></span> 
+                <span class="linktext"><a href="/messages">Messages</a></span>
+        </div>
+        <div class="titlestyle">Slack Analysis</div>
+       
+        <div id="content">{% block content %}{% endblock %}</div>
+       
+    
+</body>
+</html>
