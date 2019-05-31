@@ -13,7 +13,7 @@
         border-collapse: collapse;
         width:100%;
         border:1px solid #c6c6c6 !important;
-        margin-bottom:20px;
+        margin-bottom:70px;
     }
     .qgg-table th{
         border-collapse: collapse;
@@ -41,6 +41,7 @@
     }
     .qgg-table tr:nth-child(4){
         color:rgb(226, 27, 27) !important; 
+        font-weight:800;
     }
     .qgg-table tr:nth-child(even){
         background-color: #f8f8f8 !important;
@@ -50,8 +51,46 @@
     font-size: 25px;
     margin: 20px auto;
     font-weight:bold; 
+    margin-bottom: 50px;
     }
-  
+    .sara-table{
+        border-collapse: collapse;
+        width:100%;
+        border:1px solid #c6c6c6 !important;
+        margin-bottom:70px;
+    }
+    .sara-table th{
+        border-collapse: collapse;
+        border-right:1px solid #c6c6c6 !important;
+        border-bottom:1px solid #c6c6c6 !important;
+        background-color:#ddeeff !important; 
+        padding:5px 9px;
+        font-size:14px;
+        font-weight:600;
+        text-align:center;
+    }
+
+    .sara-table td{
+        border-collapse: collapse;
+        border-right:1px solid #c6c6c6 !important;
+        border-bottom:1px solid #c6c6c6 !important; 
+        padding:5px 9px;
+        font-size:12px;
+        font-weight:normal;
+        text-align:center;
+        word-break: break-all;
+    }
+    .sara-table tr:nth-child(odd){
+        background-color:#fff !important; 
+    }
+    .sara-table tr:nth-child(2){
+        color:rgb(226, 27, 27) !important; 
+        font-weight:800;
+    }
+    .sara-table tr:nth-child(even){
+        background-color: #f8f8f8 !important;
+    }
+    
     </style>
     {% endblock %}
 </head>
@@ -89,6 +128,23 @@
         </tr>
         {% endfor %}
       </table>
+      <div class='questions'>Who is the most popular employee?</div>
+    <table class="sara-table"> 
+        <tr>
+          <th>#</th>
+          <th>USER_ID</th>
+          <th>REACTED_BY_OTHERS_TIMES</th>
+          <th>MENTIONED_BY_OTHERS_TIMES</th>
+        </tr>
+        {% for user in popular_employees %}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{user[0]}}</td>
+          <td>{{user[1]}}</td>
+          <td>{{user[2]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
       {% endblock %}
 </body>
 </html>

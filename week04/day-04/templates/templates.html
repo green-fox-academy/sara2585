@@ -1,0 +1,33 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}This is an example page{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role ="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/test/users">Users</a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+        <div>Who reacted to the most messages?</div>
+        <table class="table"> 
+            <tr>
+              <th>#</th>
+              <th>USER_ID</th>
+              <th>REACTED_TIMES</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+              <td>{{loop.index}}</td>
+              <td>{{user[0]}}</td>
+              <td>{{user[1]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+</div>
+{% endblock %}

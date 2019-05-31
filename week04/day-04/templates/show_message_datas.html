@@ -12,7 +12,7 @@
           border-collapse: collapse;
           width:100%;
           border:1px solid #c6c6c6 !important;
-          margin-bottom:15px;
+          margin-bottom:70px;
       }
       .qgg-table th{
           border-collapse: collapse;
@@ -44,7 +44,8 @@
         text-align: center;
         font-size: 25px;
         margin: 20px auto;
-        font-weight:bold; 
+        font-weight:bold;
+        margin-bottom: 40px;
       }
       </style>
   
@@ -84,6 +85,24 @@
           <td>{{loop.index}}</td>
           <td>{{message[0]}}</td>
           <td>{{message[1]}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      <div class="questions">Which month sent the most messages?</div>
+      <table class="qgg-table">
+        <tr>
+          <th>#</th>
+          <th>YEAR</th>
+          <th>MONTH</th>
+          <th>MESSAGES_COUNT</th>
+        </tr>
+        {% for message in messages_by_month %}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{message[0]}}</td>
+          <td>{{message[1]}}</td>
+          <td>{{message[2]}}</td>
         </tr>
         {% endfor %}
       </table>

@@ -12,7 +12,7 @@
           border-collapse: collapse;
           width:100%;
           border:1px solid #c6c6c6 !important;
-          margin-bottom:15px;
+          margin-bottom:70px;
       }
       .qgg-table th{
           border-collapse: collapse;
@@ -33,6 +33,9 @@
           font-weight:normal;
           text-align:center;
           word-break: break-all;
+      }
+      .qgg-table tr:nth-child(2){
+          color: red; 
       }
       .qgg-table tr:nth-child(odd){
           background-color:#fff !important; 
@@ -63,12 +66,28 @@
           <th>IMAGE</th>
         </tr>
         {% for emoji in emojis %}
-        <tr>
+        {% if loop.index == 1%}
+        <tr color='red'>
           <td>{{loop.index}}</td>
           <td>{{emoji[0]}}</td>
           <td>{{emoji[1]}}</td>
           <td><img src="./static/green-heart.png" width="40" height="40" /></td>
         </tr>
+        {%elif loop.index ==2%}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{emoji[0]}}</td>
+          <td>{{emoji[1]}}</td>
+          <td><img src="./static/heart.png" width="50" height="50" /></td>
+        </tr>
+        {%elif loop.index ==3%}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{emoji[0]}}</td>
+          <td>{{emoji[1]}}</td>
+          <td><img src="./static/metal.jpg" width="60" height="40" /></td>
+        </tr>
+        {%endif%}
         {% endfor %}
       </table>
 

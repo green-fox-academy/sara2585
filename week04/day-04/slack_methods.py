@@ -1,6 +1,5 @@
 import psycopg2
 
-
 con = psycopg2.connect(
     host = 'localhost',
     database = 'slack',
@@ -41,6 +40,16 @@ from messages group by date
 );
  '''
 
+reacted_by_others = ''' create view reacted_by_others as(
+select  m.user_id as user_id, count(r.id) from messages as m join reactions  r on m.id = r.message_id
+group by m.user_id
+)'''
+
+popular_employees = '''create view popular_employee as (
+select r.*, m.mentioned_uers from reacted_by_others r join mentioned_by_others m on r.user_id = m.user_id)
+
+ '''
+
 def create_view(query):
     cursor.execute(query)
     con.commit()
@@ -66,7 +75,7 @@ def message_got_reactions():
 
 #Which emoji is the most common as reaction in the thanks channel?
 def most_common_emoji():
-    select_query = 'select * from emoji_count order by counts desc limit 1'
+    select_query = 'select * from emoji_count order by counts desc limit 3'
     cursor.execute(select_query)
     emojis = cursor.fetchall()
     return emojis
@@ -86,5 +95,19 @@ def send_most_messages_date():
     messages_by_date = cursor.fetchall()
     return messages_by_date
 
-# def send_most_messages_year():
-#     select_query = ''
+def send_most_messages_month():
+    select_query = '''select extract(year from date) as year, extract(month from date) as month, count(*)from messages_by_date
+    group by month, year
+    order by count desc
+    limit 5'''
+    cursor.execute(select_query)
+    message_by_month = cursor.fetchall()
+    return message_by_month
+
+
+def find_most_popular_employee():
+    select_query = '''select * from popular_employee order by mentioned_uers desc ,count desc limit 5 '''
+    cursor.execute(select_query)
+    popular_employees = cursor.fetchall()
+    return popular_employees
+
