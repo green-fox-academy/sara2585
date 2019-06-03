@@ -1,5 +1,5 @@
-def map(function, iteable):
-    for item in iteable:
+def map_sara(function, iterable):
+    for item in iterable:
         yield function(item)
 
 
