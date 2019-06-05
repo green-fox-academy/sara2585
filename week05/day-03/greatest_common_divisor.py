@@ -5,5 +5,3 @@ def greatest_common_divisor(n, m):
         return m
     else:
         return greatest_common_divisor(n, m%n)
-
-print(greatest_common_divisor(12, 6))
