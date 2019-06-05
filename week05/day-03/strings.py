@@ -5,4 +5,3 @@ def convert_x(str1):
         return 'y' + convert_x(str1[1:])
     else:
         return str1[0] + convert_x(str1[1:])
-        
