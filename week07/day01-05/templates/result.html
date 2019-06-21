@@ -1,0 +1,40 @@
+{% extends "predict.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Result</title>
+    <style type="text/css">
+        .form-style-5{
+            max-width: 500px;
+            padding: 10px 20px;
+            background: #f4f7f8;
+            margin: 10px auto;
+            padding: 20px;
+            background: #f4f7f8;
+            border-radius: 8px;
+            font-family: Georgia, "Times New Roman", Times, serif;
+        }
+        .form-style-5 fieldset{
+            border: none;
+       
+            
+        }
+    </style>
+</head>
+<body>
+    {% block content %}
+
+    <div class="form-style-5">
+        <fieldset>
+        <legend><span class="number">2</span> Prediction for your property sale is:</legend>
+        <p style="font-size:30px;color:orange"><strong>£{{prediction}}</strong></p>
+        <!-- <textarea>£{{prediction}}</textarea> -->
+        </fieldset>
+    </div>      
+    {% endblock %}
+
+</body>
+</html>
